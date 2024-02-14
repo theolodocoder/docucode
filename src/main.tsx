@@ -6,7 +6,8 @@ import * as esbuild from "esbuild-wasm"
 (async () => {
     await esbuild.initialize({
         worker: false,
-        wasmURL: "/esbuild.wasm"
+        // wasmURL: "/esbuild.wasm"
+        wasmURL:"https://unpkg.com/esbuild-wasm@0.20.0/esbuild.wasm"
     });
 })();
 
