@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as esbuild from "esbuild-wasm";
 import localForage from "localforage";
 import axios from "axios";
