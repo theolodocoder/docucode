@@ -5,10 +5,10 @@ import { fetchPlugin } from "./plugins/fetch-plugin";
 
 function App() {
   const [input, setInput] = useState("");
-  const [code, setCode] = useState("");
   const iframe = useRef<any>(null)
 
   async function onClick() {
+    iframe.current.srcdoc = html
     const result = await esbuild.build({
       entryPoints: ["index.js"],
       bundle: true,
@@ -53,8 +53,7 @@ function App() {
         <div>
           <button onClick={onClick}>Submit</button>
         </div>
-        <pre>{code}</pre>
-        <iframe ref={iframe} srcDoc={html} sandbox="allow-scripts"></iframe>
+        <iframe title="preview" ref={iframe} srcDoc={html} sandbox="allow-scripts"></iframe>
       </div>
     </>
   );
