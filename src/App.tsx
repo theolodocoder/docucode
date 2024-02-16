@@ -28,7 +28,12 @@ function App() {
   <head>
     <script>
         window.addEventListener("message",(event) => {
+          try{
           eval(event.data)
+          }catch(err){
+            document.querySelector("#root").innerHTML = '<div style="color:red"><h4>Runtime error</h4>' + err + '</div>'
+            console.error(err)
+          }
         },false)
     </script>
   </head>
