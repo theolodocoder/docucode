@@ -11,6 +11,7 @@ const CodeEditor:React.FC<CodeEditorProps> = ({initialValue,onChange}) => {
     editor.onDidChangeModelContent(()=> {
       onChange(editor.getValue())
     })
+    editor.getModel()?.updateOptions({tabSize:2})
   }
   return <Editor height={"90vh"} language="javascript" theme="vs-dark" value={initialValue} onMount={handleOnMount} options={{
     wordWrap:"on",
