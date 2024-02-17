@@ -3,6 +3,7 @@ import { Editor } from "@monaco-editor/react";
 import { editor } from "monaco-editor";
 import * as prettier from "prettier";
 import parser from "prettier/parser-babel";
+import "./CodeEditor.css"
 
 interface CodeEditorProps {
   initialValue: string;
@@ -31,7 +32,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
       useTabs: false,
       semi: true,
       singleQuote: true,
-    });
+    }).replace(/\n$/,"");
 
     // set the editors code back to the formatted code
     editorRef.current.setValue(formattedCode)
@@ -39,7 +40,8 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
 
   return (
     <>
-      <button onClick={handleFormat} className="button is-primary is-small">Format</button>
+    <div className="editor-wrapper">
+      <button onClick={handleFormat} className="button is-primary is-small button-format">Format</button>
       <Editor
         height={"90vh"}
         language="javascript"
@@ -58,6 +60,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
           automaticLayout: true,
         }}
       />
+    </div>
     </>
   );
 };
