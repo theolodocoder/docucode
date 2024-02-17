@@ -39,7 +39,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
 
   return (
     <>
-      <button onClick={handleFormat}>Format</button>
+      <button onClick={handleFormat} className="button is-primary is-small">Format</button>
       <Editor
         height={"90vh"}
         language="javascript"
