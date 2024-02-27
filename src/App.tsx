@@ -1,9 +1,9 @@
 import * as esbuild from "esbuild-wasm";
-import { useRef, useState } from "react";
-import { unpkgPathPlugin } from "./plugins/unpkg-path-plugins";
-import { fetchPlugin } from "./plugins/fetch-plugin";
-import CodeEditor from "./components/CodeEditor";
+import { useState } from "react";
+import CodeEditor from "./components/code-editor";
 import Preview from "./components/Preview";
+import { fetchPlugin } from "./plugins/fetch-plugin";
+import { unpkgPathPlugin } from "./plugins/unpkg-path-plugins";
 
 function App() {
   const [input, setInput] = useState("");

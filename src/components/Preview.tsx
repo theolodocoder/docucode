@@ -22,7 +22,7 @@ const html = `
   <div id="root"></div>
   </body>
   </html>
-  `;
+`;
 
 const Preview: React.FC<PreviewProps> = ({ code }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -39,6 +39,7 @@ const Preview: React.FC<PreviewProps> = ({ code }) => {
       title="preview"
       ref={iframe}
       srcDoc={html}
+      // this enables us to conmmunicate with the iframe from the parent
       sandbox="allow-scripts"
     ></iframe>
   );

@@ -3,7 +3,7 @@ import Editor, { Monaco } from "@monaco-editor/react";
 import { editor } from "monaco-editor";
 import * as prettier from "prettier";
 import parser from "prettier/parser-babel";
-import "./CodeEditor.css";
+import "./code-editor.css";
 // import codeShift from "jscodeshift"
 
 interface CodeEditorProps {
