@@ -1,0 +1,19 @@
+
+.preview-wrapper{
+  position: relative;
+  height: 100%;
+}
+
+.react-draggable-transparent-selection .preview-wrapper::after{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.preview{
+    height: 100%;
+    background-color: white;
+  }
