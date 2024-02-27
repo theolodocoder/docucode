@@ -8,6 +8,11 @@ interface PreviewProps {
 const html = `
   <html>
   <head>
+    <style>
+      html{
+        background-color:white;
+      }
+    </style>
     <script>
         window.addEventListener("message",(event) => {
           try{
