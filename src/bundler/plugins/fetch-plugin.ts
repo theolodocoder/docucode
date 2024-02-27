@@ -18,16 +18,16 @@ export const fetchPlugin = (inputCode: string) => {
           contents: inputCode,
         };
       });
-    build.onLoad({filter:/.*/},async (args:any) => {
-      // check if the file to load already exist in our cache
-      const cachedFile = await fileCache.getItem<esbuild.OnLoadResult>(
-        args.path
-      );
-      // if so return it
-      if (cachedFile) {
-        return cachedFile;
-      }
-    })
+      build.onLoad({ filter: /.*/ }, async (args: any) => {
+        // check if the file to load already exist in our cache
+        const cachedFile = await fileCache.getItem<esbuild.OnLoadResult>(
+          args.path
+        );
+        // if so return it
+        if (cachedFile) {
+          return cachedFile;
+        }
+      });
       build.onLoad({ filter: /.css$/ }, async (args: any) => {
         // if we dont have it the we can make the request
         const { data, request } = await axios.get(args.path);

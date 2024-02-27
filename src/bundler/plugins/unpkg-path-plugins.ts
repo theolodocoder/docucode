@@ -8,16 +8,13 @@ export const unpkgPathPlugin = () => {
         return { path: "index.js", namespace: "a" };
       });
 
-      build.onResolve({filter:/^\.+\//},(args:any) => {
+      build.onResolve({ filter: /^\.+\// }, (args: any) => {
         return {
-          path: new URL(
-            args.path,
-            "https://unpkg.com" + args.resolveDir + "/"
-          ).href,
+          path: new URL(args.path, "https://unpkg.com" + args.resolveDir + "/")
+            .href,
           namespace: "a",
         };
-
-      })
+      });
 
       build.onResolve({ filter: /.*/ }, async (args: any) => {
         return {
@@ -25,8 +22,6 @@ export const unpkgPathPlugin = () => {
           namespace: "a",
         };
       });
-
-
     },
   };
 };

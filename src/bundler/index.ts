@@ -1,7 +1,7 @@
 import * as esbuild from "esbuild-wasm";
 import "bulmaswatch/cyborg/bulmaswatch.min.css";
-import { fetchPlugin } from "../plugins/fetch-plugin";
-import { unpkgPathPlugin } from "../plugins/unpkg-path-plugins";
+import { fetchPlugin } from "./plugins/fetch-plugin";
+import { unpkgPathPlugin } from "./plugins/unpkg-path-plugins";
 
 let initialized = false;
 export default async (rawCode: string) => {
