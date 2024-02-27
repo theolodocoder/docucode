@@ -80,7 +80,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
           Format
         </button>
         <Editor
-          height={"90vh"}
+          height={"100%"}
           language="javascript"
           theme="vs-dark"
           value={initialValue}
