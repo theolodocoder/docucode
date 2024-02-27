@@ -1,8 +1,8 @@
-import { useRef } from "react";
-import Editor, { Monaco } from "@monaco-editor/react";
+import Editor from "@monaco-editor/react";
 import { editor } from "monaco-editor";
 import * as prettier from "prettier";
 import parser from "prettier/parser-babel";
+import { useRef } from "react";
 import "./code-editor.css";
 // import codeShift from "jscodeshift"
 
@@ -12,11 +12,12 @@ interface CodeEditorProps {
 }
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const editorRef = useRef<any>(null);
 
   const handleOnMount = (
-    editor: editor.IStandaloneCodeEditor,
-    monaco: Monaco
+    editor: editor.IStandaloneCodeEditor
+    // monaco: Monaco
   ) => {
     // on mount set the editorRef
     editorRef.current = editor;
